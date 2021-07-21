@@ -16,6 +16,12 @@ body {
   padding: 20px;
 }
 
+#instructions-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  padding: 20px;
+}
+
 .container {
   display: block;
   width: 50%;

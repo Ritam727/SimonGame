@@ -73,3 +73,7 @@ function start() {
     $("#start-button").toggle();
     nextSequence();
 }
+
+function instructions() {
+    alert("This is a simple memory game. You have to remember the sequence of colours that are shown. Every time a new level is reached, you have to click on the correct sequence of colours to win the game. If you get it wrong then the game will be over and you will have to restart. For eg: if the first colour is blue, you have to click on the blue button, then the next colour will be shown. Then you will have to click on the blue button and then on the new colour. The game will proceed in the same manner.")
+}
