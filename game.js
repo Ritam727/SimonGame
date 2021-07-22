@@ -1,6 +1,6 @@
 var sequence = [], uc = [];
 var colors = ["red", "blue", "green", "yellow"];
-var level = 0, started = false, right = true;
+var level = 0, started = false, hide = true;
 
 function nextSequence() {
     level++;
@@ -16,11 +16,7 @@ $(".btn").click(function () {
     var cl = $(this).attr("id");
     uc.push(cl);
     animate(cl);
-    if(right){
-        playSound(cl);
-    } else{
-        playSound("wrong");
-    }
+    playSound(cl);
     checkAnswer(0);
 });
 
@@ -69,11 +65,16 @@ function checkAnswer(lvl) {
 
 function start() {
     started = true;
-    right = true;
     $("#start-button").toggle();
     nextSequence();
 }
 
 function instructions() {
-    alert("This is a simple memory game. You have to remember the sequence of colours that are shown. Every time a new level is reached, you have to click on the correct sequence of colours to win the game. For eg: if the first colour is blue, you have to click on the blue button, then the next colour will be shown. Then you will have to click on the blue button and then on the new colour. The game will proceed in the same manner. If you get any of the colours in the sequence wrong then the game will be over and you will have to restart.")
+    if(hide){
+        $("#instructions").slideDown();
+        hide = false;
+    } else{
+        $("#instructions").slideUp();
+        hide = true;
+    }
 }
